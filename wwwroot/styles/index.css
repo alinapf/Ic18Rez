@@ -1,0 +1,38 @@
+﻿.post {
+    display: flex;
+    margin-top: 1.5em;
+}
+
+.post-image {
+    max-width: 150px;
+    margin-right: 0.5em;
+}
+
+.post-image img {
+    max-width: inherit;
+}
+
+.post-content > * {
+    margin-bottom: 0.25em;
+}
+
+.post-actions {
+    margin-top: 0.8em;
+}
+
+.post-actions a:link,
+.post-actions a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+.post-actions a {
+    padding: 0.25em 0.4em;
+    border: 1px solid black;
+    border-radius: 2px;
+    margin-left: 0.25em;
+}
+
+.post-actions a:hover {
+    background-color: firebrick;
+}

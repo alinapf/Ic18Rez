@@ -1,0 +1,27 @@
+﻿@page
+@model PasechnikovaPR33p18.Pages.LoginModel
+@section links {
+    <link rel="stylesheet" href="~/styles/userforms.css">
+}
+@{
+    ViewBag.Title = "Вход в систему";
+}
+@{
+    <form class="user-form" method="post">
+        <h1>
+            Вход в систему
+        </h1>
+        <div class="form-control">
+            <label asp-for="LoginViewModel.Username"></label>
+            <input asp-for="LoginViewModel.Username" />
+        </div>
+        <div class="form-control">
+            <label asp-for="LoginViewModel.Password"></label>
+            <input asp-for="LoginViewModel.Password" />
+        </div>
+        <div asp-validation-summary="All"></div>
+        <div class="form-control">
+            <input type="submit" value="Вход в систему">
+        </div>
+    </form>
+}

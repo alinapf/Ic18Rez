@@ -1,0 +1,40 @@
+﻿@page
+@model PasechnikovaPR33p18.Pages.UpdatePostModel
+@section links {
+    <link rel="stylesheet" href="~/styles/userforms.css">
+}
+@{
+    <form method="post" class="user-form" enctype="multipart/form-data">
+        <h1>Изменение заметки</h1>
+        <input type="hidden" asp-for="PostViewModel.PostId" />
+        <div class="form-control">
+            <label asp-for="PostViewModel.Title"></label>
+            <input asp-for="PostViewModel.Title" />
+        </div>
+        <div class="form-control">
+            <label asp-for="PostViewModel.Body"></label>
+            <textarea asp-for="PostViewModel.Body">
+            </textarea>
+        </div>
+        <div class="form-control">
+            <label asp-for="PostViewModel.CurrentImage"></label>
+            <img id="current-image" width="150" src="~/images/@Model.PostViewModel.CurrentImage" />
+        </div>
+        <div class="form-control">
+            <label asp-for="PostViewModel.Image"></label>
+            <input id="image-input" asp-for="PostViewModel.Image" accept="image/*" />
+        </div>
+        <div asp-validation-summary="All"></div>
+        <div class="form-control">
+            <input type="submit" value="Изменить заметку" />
+        </div>
+    </form>
+    <script>
+        let fileInput = document.getElementById('image-input');
+        let fileOutput = document.getElementById('current-image');
+
+        fileInput.onchange = input => {
+            fileOutput.setAttribute("src", URL.createObjectURL(fileInput.files[0]));
+        };
+    </script>
+}

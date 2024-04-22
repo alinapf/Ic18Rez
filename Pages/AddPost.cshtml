@@ -1,0 +1,26 @@
+﻿@page
+@model PasechnikovaPR33p18.Pages.AddPostModel
+@section links {
+    <link rel="stylesheet" href="~/styles/userforms.css">
+}
+@{
+    <form method="post" class="user-form" enctype="multipart/form-data">
+        <h1>Добавление заметки</h1>
+        <div class="form-control">
+            <label asp-for="AddPostViewModel.Title"></label>
+            <input asp-for="AddPostViewModel.Title" />
+        </div>
+        <div class="form-control">
+            <label asp-for="AddPostViewModel.Body"></label>
+            <input asp-for="AddPostViewModel.Body" />
+        </div>
+        <div class="form-control">
+            <label asp-for="AddPostViewModel.Image"></label>
+            <input asp-for="AddPostViewModel.Image" accept="image/*" />
+        </div>
+        <div class="validation" asp-validation-summary="All"></div>
+        <div class="form-control">
+            <input type="submit" value="Добавить заметку" />
+        </div>
+    </form>
+}

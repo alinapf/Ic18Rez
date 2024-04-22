@@ -1,0 +1,33 @@
+﻿@page
+@using PasechnikovaPR33p18.Models
+@section links {
+    <link rel="stylesheet" href="~/styles/index.css">
+}
+@model PasechnikovaPR33p18.Pages.IndexModel
+@{
+    <h1>Мои заметки: </h1>
+    @foreach (Post post in Model.Posts)
+    {
+        <div class="post">
+            <div class="post-image">
+                @if (post.ImageUrl == null)
+                {
+                    <img src="~/images/noimage.png" />
+                }
+                else
+                {
+                    <img src="~/images/@post.ImageUrl" />
+                }
+            </div>
+            <div class="post-content">
+                <h3>@post.Title</h3>
+                <p>@post.Body</p>
+                <div class="post-actions">
+                    <a asp-page="/UpdatePost" asp-route-postId="@post.PostId">Изменить</a>
+                    <a asp-page="/DeletePost" asp-route-postId="@post.PostId">Удалить</a>
+                </div>
+            </div>
+        </div>
+    }
+}
+
